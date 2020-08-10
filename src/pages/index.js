@@ -13,7 +13,6 @@ const IndexPage = ({data}) => (
     <SEO
         title="Home"
         description="Feminists at University of Alberta are a student group focused on the critical radical deconstruction of social/political inequality in our communities."
-        image="/images/university-of-alberta-feminists-club-logo.jpg"
     />
     <div
         css={css`
