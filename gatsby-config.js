@@ -3,7 +3,7 @@ module.exports = {
     title: `UofA Feminists`,
     description: `Feminists at University of Alberta are a student group focused on the critical radical deconstruction of social/political inequality in our communities.`,
     author: `@endsofinvention`,
-    image: `/images/Favicon.png`,
+    image: `/university-of-alberta-feminists-club-logo.jpg`,
     siteUrl: `https://pedantic-chandrasekhar-1a95bf.netlify.app/`,
     siteLanguage: 'en',
   },
