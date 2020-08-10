@@ -44,6 +44,13 @@ module.exports = {
       }
     },
     `gatsby-plugin-sitemap`,
-    'gatsby-plugin-robots-txt'
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://feministsuofa.com',
+        sitemap: 'https://feministsuofa.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
     ],
 }
