@@ -10,7 +10,11 @@ import BgImage from "../components/bgimage";
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+        title="Home"
+        description="Feminists at University of Alberta are a student group focused on the critical radical deconstruction of social/political inequality in our communities."
+        image="/images/university-of-alberta-feminists-club-logo.jpg"
+    />
     <div
         css={css`
               --logo-size: 220px;
@@ -41,36 +45,57 @@ const IndexPage = ({data}) => (
     </div>
     <section
         css={css`
-              margin: 2rem calc(var(--horizontal-margin) / 2);
-              padding: 0 calc(var(--horizontal-margin) / 2);
-              background-color: var(--fua-pink);
-              opacity: .75;
-              box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
               grid-area: copy;
               position: absolute;
               top: 60vh;
-              h1{
-                text-align: center;
-              }
-              p{
-                text-align: justify;
-                font-size: 20px;
-                font-weight: 600;
-                &:first-of-type{
-                text-align-last: center;
-                }
-              }
               @media screen and (min-width: 1120px){
-                margin: 2rem var(--horizontal-margin);
-                padding: 0 .5rem;
-                top: 83vh;
+                top: 81vh;
               }
             `}
     >
-    <h1>University of Alberta Feminists Club</h1>
-    <p>We are a student group focused on the critical radical deconstruction of social/political inequality in our communities. We are actively invested in both community building and political activism. We resist all forms of systemic marginalization and we aim to center experiential knowledges and voices.</p>
-    <p>FUA acknowledges that we, as part of the University of Alberta, are located on Treaty 6 territory, and we thank the diverse Indigenous peoples whose footsteps have marked this territory for centuries such as the Cree, Dene, Saulteaux, Blackfoot, Nakota Sioux, Métis; and specifically the ancestral space of the Papaschase Cree. </p>
-    <p>We also acknowledge that Land Acknowledgement Statements are not enough, and we keep reconciliation, decolonization, and Indigenous lives in our focus.</p>
+        <div
+            css={css`
+                   margin: 2rem calc(var(--horizontal-margin) / 2);
+                   padding: 0 calc(var(--horizontal-margin) / 2);
+                   background-color: var(--fua-pink);
+                   opacity: .75;
+                   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                   h1{
+                     text-align: center;
+                   }
+                   p{
+                     text-align: justify;
+                     font-size: 20px;
+                     font-weight: 600;
+                     &:first-of-type{
+                     text-align-last: center;
+                     }
+                   }
+                   @media screen and (min-width: 1120px){
+                     margin: 2rem var(--horizontal-margin) 1.25rem;
+                     padding: .5rem .5rem .25rem;
+                   }
+                `}
+        >
+            <h1>University of Alberta Feminists Club</h1>
+            <p>We are a student group focused on the critical radical deconstruction of social/political inequality in our communities. We are actively invested in both community building and political activism. We resist all forms of systemic marginalization and we aim to center experiential knowledges and voices.</p>
+            <p>FUA acknowledges that we, as part of the University of Alberta, are located on Treaty 6 territory, and we thank the diverse Indigenous peoples whose footsteps have marked this territory for centuries such as the Cree, Dene, Saulteaux, Blackfoot, Nakota Sioux, Métis; and specifically the ancestral space of the Papaschase Cree. </p>
+            <p>We also acknowledge that Land Acknowledgement Statements are not enough, and we keep reconciliation, decolonization, and Indigenous lives in our focus.</p>
+        </div>
+        <a href="https://www.instagram.com/feministsuofa/" rel="sameAs">
+            <Img
+                fluid={data.ig.childImageSharp.fluid}
+                alt="Instagram icon"
+                css={css`
+                      --icon-width: 55px;
+                      width: var(--icon-width);
+                      margin: 0 calc((100% - var(--icon-width)) / 2) .5rem;
+                      @media screen and (min-width: 1120px){
+                        --icon-width: 40px
+                      }
+                    `}
+            />
+        </a>
     </section>
   </Layout>
 )
@@ -85,6 +110,13 @@ export const query = graphql`
             }
         }
         assiniboia: file(relativePath: { eq:"assiniboia-hall-university-of-alberta.jpg" }) {
+            childImageSharp {
+                fluid (quality:100) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        ig: file(relativePath: { eq:"instagram.png" }) {
             childImageSharp {
                 fluid (quality:100) {
                     ...GatsbyImageSharpFluid
