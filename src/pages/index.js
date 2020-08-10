@@ -86,11 +86,11 @@ const IndexPage = ({data}) => (
                 fluid={data.ig.childImageSharp.fluid}
                 alt="Instagram icon"
                 css={css`
-                      --icon-width: 55px;
+                      --icon-width: 35px;
                       width: var(--icon-width);
                       margin: 0 calc((100% - var(--icon-width)) / 2) .5rem;
                       @media screen and (min-width: 1120px){
-                        --icon-width: 40px
+                        --icon-width: 35px
                       }
                     `}
             />
