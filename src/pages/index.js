@@ -83,7 +83,7 @@ const IndexPage = ({data}) => (
         </div>
         <a href="https://www.instagram.com/feministsuofa/" rel="sameAs">
             <Img
-                fluid={data.ig.childImageSharp.fluid}
+                fixed={data.ig.childImageSharp.fixed}
                 alt="Instagram icon"
                 css={css`
                       --icon-width: 35px;
@@ -117,8 +117,8 @@ export const query = graphql`
         }
         ig: file(relativePath: { eq:"instagram.png" }) {
             childImageSharp {
-                fluid (quality:100) {
-                    ...GatsbyImageSharpFluid
+                fixed (quality:100, width: 35) {
+                    ...GatsbyImageSharpFixed
                 }
             }
         }
