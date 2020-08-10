@@ -4,7 +4,7 @@ module.exports = {
     description: `Feminists at University of Alberta are a student group focused on the critical radical deconstruction of social/political inequality in our communities.`,
     author: `@endsofinvention`,
     image: `/images/Favicon.png`,
-    url: `https://pedantic-chandrasekhar-1a95bf.netlify.app/`,
+    siteUrl: `https://pedantic-chandrasekhar-1a95bf.netlify.app/`,
     siteLanguage: 'en',
   },
   plugins: [
@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `UofA Feminists Club`,
+        short_name: `UofA Feminists`,
         start_url: `/`,
         background_color: `#FCE3D8`,
         theme_color: `#FCE3D8`,

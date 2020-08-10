@@ -125,7 +125,7 @@ const query = graphql`
           defaultTitle: title
           defaultDescription: description
           siteLanguage
-          siteUrl: url
+          siteUrl
           author
           defaultImage: image
         }
