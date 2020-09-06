@@ -11,8 +11,14 @@ import Header from "../components/header";
 const EventsPage = () => {
 
     return <Layout>
+        <div
+            css={css`
+                  background-color: var(--background);
+                `}
+        >
         <Header/>
-        <h1>test</h1>
+            <h1>test</h1>
+        </div>
     </Layout>
 }
 

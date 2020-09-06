@@ -23,13 +23,17 @@ const Header = (props) => {
     css={css`
           background-color: var(--fua-pink);
           display: flex;
+          justify-content: space-between;
+          align-content: center;
+          padding: .75rem var(--horizontal-margin);
+          box-shadow: 0 4px 4px 0 var(--shadow);
         `}
   >
     <Img
         fluid={data.logo.childImageSharp.fluid}
         alt="University of Alberta Feminists Club Logo"
         css={css`
-              width: 200px;
+              width: 100px;
               border-radius: 100%;
             `}
     />

@@ -28,12 +28,13 @@ const Navbar = (props) => {
               display: block;
               padding-top: .2rem;
               font-size: 1.2rem;
+              font-family: var(--title-family);
               @media only screen and (min-width: 1120px) {
               display: inline-block;
-              margin-left: 1rem;
+              margin-left: 2rem;
+              font-size: 1.5rem;
               }
             `}>
-            <h5 css={css`font-size: 1.2rem; @media screen and (min-width: 1120px){font-size: .9rem}`}>
                 <StyledLink
                     data-active={scrolled}
                     to={props.to}
@@ -41,7 +42,6 @@ const Navbar = (props) => {
                 >
                     {props.children}
                 </StyledLink>
-            </h5>
         </li>
     );
 
@@ -161,7 +161,8 @@ const Navbar = (props) => {
                       }
                     }
               @media only screen and (min-width: 1120px) {
-                padding-left: 0;
+                padding: 0;
+                margin: 0;
               }
             `}
         >
@@ -178,7 +179,6 @@ const Navbar = (props) => {
                       }
                     `}
             >
-                <h5 css={css`font-size: 1.2rem;`}>
                     <a
                         aria-label="Close main menu"
                         onClick={() => {
@@ -195,14 +195,16 @@ const Navbar = (props) => {
                                   background-color: #ffffff;
                                   text-decoration: none;
                                   display: block;
+                                  font-size: 1.2rem;
+                                  font-family: var(--title-family);
                                   @media only screen and (min-width: 1120px) {
                                     display: none;
+                                    font-size: 1.5rem;
                                   }
                                 `}
                     >
                         Close
                     </a>
-                </h5>
             </li>
 
         </ul>

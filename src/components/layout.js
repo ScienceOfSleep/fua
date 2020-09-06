@@ -28,9 +28,9 @@ const Layout = ({ children }) => {
     <>
         <Global styles={css`
           :root{
-          --main-bg: white;
+          --background: #e7e7e7;
           --fua-pink: #FCE3D8;
-          --shadow: #2A57B8;
+          --shadow: hsla(0, 0%, 0%, .25);
           --font: #000000;
           --strong-font: #000000;
           --title-family: "IBM Plex Mono", sans-serif;
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
         }
         `}/>
         <main
-            css={css`position: relative`}
+            css={css`position: relative;`}
         >
             {children}
         </main>
