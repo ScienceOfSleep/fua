@@ -111,7 +111,7 @@ const IndexPage = ({data}) => (
                       width: var(--icon-width);
                       margin-left: 1rem;
                       @media screen and (min-width: 1120px){
-                        --icon-width: 20px
+                        --icon-width: 35px
                       }
                     `}
             />
@@ -137,16 +137,16 @@ export const query = graphql`
                 }
             }
         }
-        ig: file(relativePath: { eq:"instagram.png" }) {
+        ig: file(relativePath: { eq:"ig-icon.png" }) {
             childImageSharp {
-                fixed (quality:100, width: 45) {
+                fixed (quality:100, width: 30) {
                     ...GatsbyImageSharpFixed
                 }
             }
         }
-        fb: file(relativePath: { eq:"facebook.png" }) {
+        fb: file(relativePath: { eq:"fb-icon.png" }) {
             childImageSharp {
-                fixed (quality:100, width: 28) {
+                fixed (quality:100, width: 29) {
                     ...GatsbyImageSharpFixed
                 }
             }
