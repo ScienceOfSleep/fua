@@ -9,7 +9,7 @@ const Header = (props) => {
 
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "university-of-alberta-feminists-club-logo.jpg" }) {
+      logo: file(relativePath: { eq: "FUA-grey-logo.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid

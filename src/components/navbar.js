@@ -31,7 +31,7 @@ const Navbar = (props) => {
               font-family: var(--title-family);
               @media only screen and (min-width: 1120px) {
               display: inline-block;
-              margin-left: 2rem;
+              margin-left: 3rem;
               font-size: 1.5rem;
               }
             `}>
@@ -168,8 +168,7 @@ const Navbar = (props) => {
         >
             <ListLink to="/">Home</ListLink>
             <ListLink to="/events">Events</ListLink>
-            <ListLink to="/">Blog</ListLink>
-            <ListLink to="/">Volunteer</ListLink>
+            <ListLink to="/get-involved">Get Involved</ListLink>
             <li
                 css={css`
                       list-style: none;

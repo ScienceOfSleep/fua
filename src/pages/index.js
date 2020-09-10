@@ -81,6 +81,13 @@ const IndexPage = ({data}) => (
             <p>FUA acknowledges that we, as part of the University of Alberta, are located on Treaty 6 territory, and we thank the diverse Indigenous peoples whose footsteps have marked this territory for centuries such as the Cree, Dene, Saulteaux, Blackfoot, Nakota Sioux, Métis; and specifically the ancestral space of the Papaschase Cree. </p>
             <p>We also acknowledge that Land Acknowledgement Statements are not enough, and we keep reconciliation, decolonization, and Indigenous lives in our focus.</p>
         </div>
+        <div
+            css={css`
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                `}
+        >
         <a href="https://www.instagram.com/feministsuofa/" rel="sameAs">
             <Img
                 fixed={data.ig.childImageSharp.fixed}
@@ -88,13 +95,28 @@ const IndexPage = ({data}) => (
                 css={css`
                       --icon-width: 35px;
                       width: var(--icon-width);
-                      margin: 0 calc((100% - var(--icon-width)) / 2) .5rem;
+                      margin-right: 1rem;
                       @media screen and (min-width: 1120px){
                         --icon-width: 35px
                       }
                     `}
             />
         </a>
+        <a href="https://www.facebook.com/feministsuofa/" rel="sameAs">
+            <Img
+                fixed={data.fb.childImageSharp.fixed}
+                alt="Facebook icon"
+                css={css`
+                      --icon-width: 35px;
+                      width: var(--icon-width);
+                      margin-left: 1rem;
+                      @media screen and (min-width: 1120px){
+                        --icon-width: 20px
+                      }
+                    `}
+            />
+        </a>
+        </div>
     </section>
   </Layout>
 )
@@ -117,7 +139,14 @@ export const query = graphql`
         }
         ig: file(relativePath: { eq:"instagram.png" }) {
             childImageSharp {
-                fixed (quality:100, width: 35) {
+                fixed (quality:100, width: 45) {
+                    ...GatsbyImageSharpFixed
+                }
+            }
+        }
+        fb: file(relativePath: { eq:"facebook.png" }) {
+            childImageSharp {
+                fixed (quality:100, width: 28) {
                     ...GatsbyImageSharpFixed
                 }
             }
