@@ -29,7 +29,9 @@ const Layout = ({ children }) => {
         <Global styles={css`
           :root{
           --background: #e7e7e7;
+          --dark-grey: #C4C4C4;
           --fua-pink: #FCE3D8;
+          --fua-blue: #C1E6F5;
           --shadow: hsla(0, 0%, 0%, .25);
           --font: #000000;
           --strong-font: #000000;
