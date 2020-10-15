@@ -126,7 +126,28 @@ export const query = graphql`
                 }
             }
         }
+  allContentfulExecutive {
+    edges {
+      node {
+        id
+        bio {
+          bio
+        }
+        name
+        fieldOfStudy
+        picture {
+          file {
+            url
+          }
+        }
+        positionTitle
+        positionDescription {
+          positionDescription
+        }
+      }
     }
+  }
+  }
 `
 
 export default GetInvolvedPage

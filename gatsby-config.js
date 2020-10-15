@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `UofA Feminists`,
@@ -51,6 +55,15 @@ module.exports = {
         sitemap: 'https://feministsuofa.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
-    }
-    ],
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        // Learn about environment variables: https://gatsby.app/env-vars
+        accessToken: process.env.DELIVERY_TOKEN,
+        downloadLocal: true,
+      },
+    },
+  ],
 }
