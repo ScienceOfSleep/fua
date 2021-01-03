@@ -86,8 +86,9 @@ const GetInvolvedPage = ({data}) => {
                 <LinkButton to="/events" content="Event Schedule"/>
             </section>
             <h2>Our Executive Committee</h2>
-            <section
-                css={css`
+            {data.allContentfulExecutive.edges.map(({node})=>(
+                <section
+                    css={css`
                       background-color: #ffffff;
                       border-top: 8px solid var(--fua-blue);
                       border-left: 8px solid var(--fua-blue);
@@ -97,15 +98,21 @@ const GetInvolvedPage = ({data}) => {
                         width: fit-content;
                         margin: 0 auto;
                       }
+                      img{
+                        width: 250px;
+                      }
                     `}
-            >
-                <h3>President</h3>
-                <h4>Mikayla Huculak</h4>
-                <h5>Women and Gender Studies Major, Native Studies Minor</h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras commodo in nisi non dictum. Sed auctor auctor justo, ut volutpat orci venenatis eu. Nam accumsan quam sed nisl molestie pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas placerat tempor dui, at convallis mauris auctor quis. Nunc dictum laoreet fringilla. Sed id eros eget enim lacinia cursus.
-                </p>
-            </section>
+                >
+                    <h3>{node.positionTitle}</h3>
+                    <h4>{node.name}</h4>
+                    <h5>{node.fieldOfStudy}</h5>
+                    <h5>Bio</h5>
+                    <p>{node.bio.bio}</p>
+                    <h5>Position Description</h5>
+                    <p>{node.positionDescription.positionDescription}</p>
+                    <img src={node.picture.fixed.src} alt={node.picture.description}/>
+                </section>
+            ))}
         </div>
     </Layout>
 }
@@ -138,7 +145,12 @@ export const query = graphql`
         picture {
           file {
             url
+            }
+          fixed {
+              srcWebp
+              src
           }
+          description
         }
         positionTitle
         positionDescription {

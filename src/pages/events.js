@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from "../components/header";
 
-const EventsPage = () => {
+const EventsPage = ({data}) => {
 
     return <Layout>
         <div
@@ -25,8 +25,9 @@ const EventsPage = () => {
             >
                 Events
             </h1>
-            <section
-                css={css`
+            {data.allContentfulEvent.edges.map(({node})=>(
+                <section
+                    css={css`
                       background-color: #ffffff;
                       border-top: 8px solid var(--fua-blue);
                       border-left: 8px solid var(--fua-blue);
@@ -37,12 +38,30 @@ const EventsPage = () => {
                         margin: 0 auto;
                       }
                     `}
-            >
-                <h2>Test Event</h2>
-
-            </section>
+                >
+                    <h3>{node.eventName}</h3>
+                    <h4>{node.eventDate}</h4>
+                    <p>{node.eventDescription.eventDescription}</p>
+                </section>
+                ))}
         </div>
     </Layout>
 }
+
+export const query = graphql`
+query {
+  allContentfulEvent {
+    edges {
+      node {
+        eventName
+        eventDate(formatString: "MMMM Do Y, ha")
+        eventDescription {
+          eventDescription
+        }
+      }
+    }
+  }
+}
+`
 
 export default EventsPage
