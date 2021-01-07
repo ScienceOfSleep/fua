@@ -12,7 +12,6 @@ const StyledLink = styled(Link)`
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 2px;
-  grid-area: buttonLink;
   &:hover, &:focus{
     background-color: var(--fua-blue);
   }

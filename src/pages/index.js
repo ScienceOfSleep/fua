@@ -111,7 +111,7 @@ const IndexPage = ({data}) => (
                       width: var(--icon-width);
                       margin-left: 1rem;
                       @media screen and (min-width: 1120px){
-                        --icon-width: 35px
+                        margin-bottom: 1px;
                       }
                     `}
             />

@@ -25,6 +25,7 @@ const GetInvolvedPage = ({data}) => {
                 css={css`
                       margin: var(--large-space) auto;
                       width: fit-content;
+                      text-align: center;
                     `}
             >
                 Get Involved with Feminists at the UofA
@@ -36,32 +37,40 @@ const GetInvolvedPage = ({data}) => {
                       border-left: 8px solid var(--fua-blue);
                       border-radius: 25px;
                       box-shadow: 0 4px 4px 0 var(--shadow);
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      padding-bottom: 1.25rem;
                       h2{
-                        width: fit-content;
-                        margin: 0 auto;
+                        text-align: center;
+                      }
+                      p{
+                      text-align: justify;
+                      padding: 0 .5rem 1rem .25rem;
                       }
                     `}
             >
                 <h2>Find the FUA on Social Media</h2>
                 <div
                     css={css`
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                `}
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin: 1rem 0 .5rem;
+                    `}
                 >
                     <a href="https://www.instagram.com/feministsuofa/" rel="sameAs">
                         <Img
                             fixed={data.ig.childImageSharp.fixed}
                             alt="Instagram icon"
                             css={css`
-                      --icon-width: 35px;
-                      width: var(--icon-width);
-                      margin-right: 1rem;
-                      @media screen and (min-width: 1120px){
-                        --icon-width: 35px
-                      }
-                    `}
+                              --icon-width: 35px;
+                              width: var(--icon-width);
+                              margin-right: 1rem;
+                              @media screen and (min-width: 1120px){
+                                --icon-width: 35px
+                              }
+                            `}
                         />
                     </a>
                     <a href="https://www.facebook.com/feministsuofa/" rel="sameAs">
@@ -69,13 +78,14 @@ const GetInvolvedPage = ({data}) => {
                             fixed={data.fb.childImageSharp.fixed}
                             alt="Facebook icon"
                             css={css`
-                      --icon-width: 35px;
-                      width: var(--icon-width);
-                      margin-left: 1rem;
-                      @media screen and (min-width: 1120px){
-                        --icon-width: 35px
-                      }
-                    `}
+                              --icon-width: 35px;
+                              width: var(--icon-width);
+                              margin-left: 1rem;
+                              margin-bottom: 1px;
+                              @media screen and (min-width: 1120px){
+                                --icon-width: 35px
+                              }
+                            `}
                         />
                     </a>
                 </div>
@@ -94,23 +104,44 @@ const GetInvolvedPage = ({data}) => {
                       border-left: 8px solid var(--fua-blue);
                       border-radius: 25px;
                       box-shadow: 0 4px 4px 0 var(--shadow);
+                      display: grid;
+                      grid-template-columns: 10px 1fr 10px;
+                      justify-items: center;
+                      > *{
+                        grid-column: 2;
+                      }
+                      h3,h4,h5{
+                        text-align: center;
+                      }
                       h3{
-                        width: fit-content;
-                        margin: 0 auto;
+                        font-size: 1.5rem;
+                      }
+                      h4{
+                        font-size: 1.5rem;
+                      }
+                      h5{
+                        font-size: 1.1rem;
+                      }
+                      p{
+                        text-align: justify;
+                        margin-bottom: .75rem;
                       }
                       img{
-                        width: 250px;
+                        margin-top: .25rem;
+                        width: 100%;
+                        border-radius: 100%;
+                        border: 7px solid var(--fua-pink);
                       }
                     `}
                 >
                     <h3>{node.positionTitle}</h3>
+                    <img src={node.picture.fixed.src} alt={node.picture.description}/>
                     <h4>{node.name}</h4>
                     <h5>{node.fieldOfStudy}</h5>
                     <h5>Bio</h5>
                     <p>{node.bio.bio}</p>
                     <h5>Position Description</h5>
                     <p>{node.positionDescription.positionDescription}</p>
-                    <img src={node.picture.fixed.src} alt={node.picture.description}/>
                 </section>
             ))}
         </div>
