@@ -158,9 +158,11 @@ const GetInvolvedPage = ({data}) => {
                         .position-title{
                           grid-area: title;
                           margin-top: .75rem;
+                          border-bottom: 5px solid var(--fua-pink);
                         }
                         .officer-name{
                           grid-area: name;
+                          font-size: 1.25rem;
                         }
                         .field-of-study{
                           grid-area: field;
