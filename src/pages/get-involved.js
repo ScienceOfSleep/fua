@@ -95,7 +95,15 @@ const GetInvolvedPage = ({data}) => {
                 </p>
                 <LinkButton to="/events" content="Event Schedule"/>
             </section>
-            <h2>Our Executive Committee</h2>
+            <h2
+                css={css`
+                      margin: 3.5rem auto 2rem;
+                      width: fit-content;
+                      text-align: center;
+                    `}
+            >
+                Our Executive Committee
+            </h2>
             {data.allContentfulExecutive.edges.map(({node})=>(
                 <section
                     css={css`
@@ -132,16 +140,62 @@ const GetInvolvedPage = ({data}) => {
                         border-radius: 100%;
                         border: 7px solid var(--fua-pink);
                       }
+                      @media screen and (min-width: 1120px){
+                        grid-template-areas:
+                        "img . title"
+                        "img . name"
+                        "img . field"
+                        "img . bioHeading"
+                        "img . bio"
+                        "img . positionHeading"
+                        "img . position"
+                        ;
+                        .officer-picture{
+                          grid-area: img;
+                          width: 250px;
+                          margin-left: 1rem;
+                        }
+                        .position-title{
+                          grid-area: title;
+                          margin-top: .75rem;
+                        }
+                        .officer-name{
+                          grid-area: name;
+                        }
+                        .field-of-study{
+                          grid-area: field;
+                        }
+                        .bio-heading{
+                          grid-area: bioHeading;
+                          margin-top: 1rem;
+                        }
+                        .officer-bio{
+                          grid-area: bio;
+                          margin-top: 0;
+                        }
+                        .position-heading{
+                          grid-area: positionHeading;
+                          margin-top: .25rem;
+                        }
+                        .position-description{
+                          grid-area: position;
+                          margin-top: 0;
+                        }
+                        grid-template-columns: 20% 5% 75%;
+                        align-items: center;
+                        padding-right: 5rem;
+                        margin-bottom: 2rem;
+                      }
                     `}
                 >
-                    <h3>{node.positionTitle}</h3>
-                    <img src={node.picture.fixed.src} alt={node.picture.description}/>
-                    <h4>{node.name}</h4>
-                    <h5>{node.fieldOfStudy}</h5>
-                    <h5>Bio</h5>
-                    <p>{node.bio.bio}</p>
-                    <h5>Position Description</h5>
-                    <p>{node.positionDescription.positionDescription}</p>
+                    <h3 className="position-title">{node.positionTitle}</h3>
+                    <img src={node.picture.fixed.src} alt={node.picture.description} className="officer-picture"/>
+                    <h4 className="officer-name">{node.name}</h4>
+                    <h5 className="field-of-study">{node.fieldOfStudy}</h5>
+                    <h5 className="bio-heading">Bio</h5>
+                    <p className="officer-bio">{node.bio.bio}</p>
+                    <h5 className="position-heading">Position Description</h5>
+                    <p className="position-description">{node.positionDescription.positionDescription}</p>
                 </section>
             ))}
         </div>
