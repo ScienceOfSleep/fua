@@ -170,6 +170,7 @@ const GetInvolvedPage = ({data}) => {
                         .bio-heading{
                           grid-area: bioHeading;
                           margin-top: 1rem;
+                          justify-self: start;
                         }
                         .officer-bio{
                           grid-area: bio;
@@ -178,6 +179,7 @@ const GetInvolvedPage = ({data}) => {
                         .position-heading{
                           grid-area: positionHeading;
                           margin-top: .25rem;
+                          justify-self: start;
                         }
                         .position-description{
                           grid-area: position;
