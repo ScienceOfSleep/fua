@@ -52,9 +52,9 @@ const Layout = ({ children }) => {
           box-sizing: border-box;
           margin: 0;
           }
-          section{
-          margin: 0 var(--horizontal-margin);
-          }
+          //section{
+          //margin: 0 var(--horizontal-margin);
+          //}
           * + p,
           section,
           h3{

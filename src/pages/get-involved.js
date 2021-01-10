@@ -30,7 +30,7 @@ const GetInvolvedPage = ({data}) => {
             >
                 Get Involved with Feminists at the UofA
             </h1>
-            <section
+            <div
                 css={css`
                       background-color: #ffffff;
                       border-top: 8px solid var(--fua-blue);
@@ -94,7 +94,7 @@ const GetInvolvedPage = ({data}) => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras commodo in nisi non dictum. Sed auctor auctor justo, ut volutpat orci venenatis eu. Nam accumsan quam sed nisl molestie pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas placerat tempor dui, at convallis mauris auctor quis. Nunc dictum laoreet fringilla. Sed id eros eget enim lacinia cursus.
                 </p>
                 <LinkButton to="/events" content="Event Schedule"/>
-            </section>
+            </div>
             <h2
                 css={css`
                       margin: 3.5rem auto 2rem;
