@@ -66,6 +66,7 @@ const IndexPage = ({data}) => (
                      text-align: justify;
                      font-size: 20px;
                      font-weight: 600;
+                     margin-top: .5rem;
                      &:first-of-type{
                      text-align-last: center;
                      }

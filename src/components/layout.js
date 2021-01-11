@@ -52,14 +52,6 @@ const Layout = ({ children }) => {
           box-sizing: border-box;
           margin: 0;
           }
-          //section{
-          //margin: 0 var(--horizontal-margin);
-          //}
-          * + p,
-          section,
-          h3{
-          margin-top: var(--medium-space);
-          }
           html,
           body{
           margin: 0;

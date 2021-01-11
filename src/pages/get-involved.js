@@ -32,6 +32,7 @@ const GetInvolvedPage = ({data}) => {
             </h1>
             <div
                 css={css`
+                      margin: 0 var(--horizontal-margin);
                       background-color: #ffffff;
                       border-top: 8px solid var(--fua-blue);
                       border-left: 8px solid var(--fua-blue);
@@ -46,7 +47,7 @@ const GetInvolvedPage = ({data}) => {
                       }
                       p{
                       text-align: justify;
-                      padding: 0 .5rem 1rem .25rem;
+                      padding: .5rem .5rem 1rem .25rem;
                       }
                     `}
             >
@@ -105,8 +106,9 @@ const GetInvolvedPage = ({data}) => {
                 Our Executive Committee
             </h2>
             {data.allContentfulExecutive.edges.map(({node})=>(
-                <section
+                <div
                     css={css`
+                      margin: 0 var(--horizontal-margin);
                       background-color: #ffffff;
                       border-top: 8px solid var(--fua-blue);
                       border-left: 8px solid var(--fua-blue);
@@ -200,7 +202,7 @@ const GetInvolvedPage = ({data}) => {
                     <p className="officer-bio">{node.bio.bio}</p>
                     <h5 className="position-heading">Position Description</h5>
                     <p className="position-description">{node.positionDescription.positionDescription}</p>
-                </section>
+                </div>
             ))}
         </div>
     </Layout>
