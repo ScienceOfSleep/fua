@@ -21,6 +21,7 @@ const GetInvolvedPage = ({data}) => {
                 `}
         >
             <Header/>
+            <section>
             <h1
                 css={css`
                       margin: var(--large-space) auto;
@@ -96,6 +97,8 @@ const GetInvolvedPage = ({data}) => {
                 </p>
                 <LinkButton to="/events" content="Event Schedule"/>
             </div>
+            </section>
+            <section>
             <h2
                 css={css`
                       margin: 3.5rem auto 2rem;
@@ -204,6 +207,7 @@ const GetInvolvedPage = ({data}) => {
                     <p className="position-description">{node.positionDescription.positionDescription}</p>
                 </div>
             ))}
+            </section>
         </div>
     </Layout>
 }
